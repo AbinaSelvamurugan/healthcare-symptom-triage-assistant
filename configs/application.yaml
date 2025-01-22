@@ -1,0 +1,8 @@
+mode: offline_demo
+jurisdiction: unspecified
+emergency_contact: null
+max_input_chars: 3000
+max_questions: 2
+session_ttl_minutes: 30
+provider_timeout_seconds: 12.0
+provider_max_retries: 1

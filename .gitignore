@@ -1,0 +1,25 @@
+# Secrets and local runtime configuration
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Virtualenvs, caches, build products
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.DS_Store
+
+# Sensitive or local-only state (not required by this repository)
+*.sqlite3
+*.db
+.reports-private/

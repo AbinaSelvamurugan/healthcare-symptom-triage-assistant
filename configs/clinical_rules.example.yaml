@@ -1,0 +1,101 @@
+protocol_id: CAREGUIDE-SYNTHETIC-ONLY
+protocol_version: 0.1.0
+source: 'Fictional software testing fixtures; not a clinical publication'
+status: DEMONSTRATION_ONLY
+jurisdiction: unspecified
+population: 'fictional adult scenarios only; not for real people'
+review_date: null
+reviewer: null
+limitations: 'Simplified English phrase matching; not comprehensive; not clinically reviewed; no coverage of pediatric/pregnancy scenarios.'
+questions:
+  - id: Q_ONSET
+    field: onset
+    prompt: 'For this fictional scenario, when did the reported symptom start? (You may answer unknown.)'
+  - id: Q_MAIN
+    field: main_symptom
+    prompt: 'For this fictional scenario, what is the main symptom? (You may answer unknown.)'
+rules:
+  - id: DEMO-EMERGENCY-BREATHING
+    version: 0.1.0
+    approval_status: DEMONSTRATION_ONLY
+    applicable_population: fictional adults only
+    trigger_any: ['severe breathing difficulty', 'cannot breathe', 'can.t breathe', 'struggling to breathe', 'hard to breath', 'gasping for air']
+    required_information: [narrative]
+    escalation_category: EMERGENCY
+    user_instruction: 'DEMONSTRATION EMERGENCY FLAG: If this describes a real emergency, contact your local emergency service immediately. Do not wait to complete this chat.'
+    source: 'Synthetic example; not reviewed clinical guidance'
+    review_date: null
+    reviewer: null
+    limitations: 'Neither complete nor validated; phrase-based only'
+  - id: DEMO-EMERGENCY-STROKE
+    version: 0.1.0
+    approval_status: DEMONSTRATION_ONLY
+    applicable_population: fictional adults only
+    trigger_any: ['face drooping', 'face droop', 'sudden speech difficulty', 'suddenly slurred speech', 'one side is weak']
+    required_information: [narrative]
+    escalation_category: EMERGENCY
+    user_instruction: 'DEMONSTRATION EMERGENCY FLAG: If this describes a real emergency, contact your local emergency service immediately. Do not wait to complete this chat.'
+    source: 'Synthetic example; not reviewed clinical guidance'
+    review_date: null
+    reviewer: null
+    limitations: 'Neither complete nor validated; phrase-based only'
+  - id: DEMO-EMERGENCY-CHEST
+    version: 0.1.0
+    approval_status: DEMONSTRATION_ONLY
+    applicable_population: fictional adults only
+    trigger_any: ['severe chest pain', 'crushing chest pain', 'very bad chest pain', 'intense chest pressure']
+    required_information: [narrative]
+    escalation_category: EMERGENCY
+    user_instruction: 'DEMONSTRATION EMERGENCY FLAG: If this describes a real emergency, contact your local emergency service immediately. Do not wait to complete this chat.'
+    source: 'Synthetic example; not reviewed clinical guidance'
+    review_date: null
+    reviewer: null
+    limitations: 'Neither complete nor validated; phrase-based only'
+  - id: DEMO-EMERGENCY-UNRESPONSIVE
+    version: 0.1.0
+    approval_status: DEMONSTRATION_ONLY
+    applicable_population: fictional adults only
+    trigger_any: ['unresponsive', 'not responding and unconscious', 'won.t wake up']
+    required_information: [narrative]
+    escalation_category: EMERGENCY
+    user_instruction: 'DEMONSTRATION EMERGENCY FLAG: If this describes a real emergency, contact your local emergency service immediately. Do not wait to complete this chat.'
+    source: 'Synthetic example; not reviewed clinical guidance'
+    review_date: null
+    reviewer: null
+    limitations: 'Neither complete nor validated; phrase-based only'
+  - id: DEMO-EMERGENCY-BLEEDING
+    version: 0.1.0
+    approval_status: DEMONSTRATION_ONLY
+    applicable_population: fictional adults only
+    trigger_any: ['severe uncontrolled bleeding', 'bleeding will not stop', 'bleeding won.t stop']
+    required_information: [narrative]
+    escalation_category: EMERGENCY
+    user_instruction: 'DEMONSTRATION EMERGENCY FLAG: If this describes a real emergency, contact your local emergency service immediately. Do not wait to complete this chat.'
+    source: 'Synthetic example; not reviewed clinical guidance'
+    review_date: null
+    reviewer: null
+    limitations: 'Neither complete nor validated; phrase-based only'
+  - id: DEMO-URGENT-KEYWORD
+    version: 0.1.0
+    approval_status: DEMONSTRATION_ONLY
+    applicable_population: fictional adults only
+    trigger_any: ['synthetic urgent marker']
+    required_information: [narrative]
+    escalation_category: URGENT
+    user_instruction: 'DEMONSTRATION URGENT FLAG: Please contact a qualified healthcare professional for prompt assessment. This is not a clinical determination.'
+    source: 'Synthetic example; not reviewed clinical guidance'
+    review_date: null
+    reviewer: null
+    limitations: 'Artificial marker, no clinical timing specified'
+  - id: DEMO-INFO-MARKER
+    version: 0.1.0
+    approval_status: DEMONSTRATION_ONLY
+    applicable_population: fictional adults only
+    trigger_any: ['synthetic information marker']
+    required_information: [narrative]
+    escalation_category: GENERAL_INFO
+    user_instruction: 'This is a synthetic software-testing example only. No medical safety or urgency determination has been made.'
+    source: 'Synthetic example; not reviewed clinical guidance'
+    review_date: null
+    reviewer: null
+    limitations: 'Artificial marker; never treat as medical clearance'

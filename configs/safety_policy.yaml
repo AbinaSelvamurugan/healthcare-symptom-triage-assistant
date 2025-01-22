@@ -1,0 +1,5 @@
+policy_version: 0.1.0
+uncertainty_instruction: 'This educational demonstration cannot assess your symptoms. Contact a qualified healthcare professional for an assessment. If you think this is an emergency, contact your local emergency service now.'
+provider_failure_instruction: 'The optional language service is unavailable or returned an invalid response. No clinical assessment has been made. Contact a qualified healthcare professional; if this may be an emergency, contact your local emergency service now.'
+unsupported_instruction: 'This prototype cannot provide diagnoses, prescriptions, medication adjustments, or medical clearance. Please consult a qualified healthcare professional for that decision.'
+emergency_fallback_instruction: 'A demonstration emergency trigger was detected. This is NOT a clinical assessment. If this resembles a real emergency, contact your local emergency service now. Do not wait for this chat.'
