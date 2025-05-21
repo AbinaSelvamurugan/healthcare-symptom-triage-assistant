@@ -1,0 +1,44 @@
+name: Offline software verification (synthetic data only)
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-tests:
+    name: Python ${{ matrix.python-version }} synthetic tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.13']
+    env:
+      CAREGUIDE_MODE: offline_demo
+      CAREGUIDE_RUN_LIVE_API: '0'
+      CAREGUIDE_ENABLE_DEV_DASHBOARD: 'false'
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install application and test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[dev]'
+      - name: Validate demonstration-only configuration
+        run: python scripts/validate_rules.py
+      - name: Run offline tests (no Claude credentials required)
+        run: python -m pytest -q
+      - name: Verify synthetic scenario guardrails
+        run: python scripts/run_guardrail_tests.py
+      - name: Confirm report generation
+        run: python scripts/generate_safety_report.py
