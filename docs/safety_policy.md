@@ -1,0 +1,7 @@
+# Safety and refusal policy
+
+Policy identifier: `configs/safety_policy.yaml`, version 0.1.0. The deterministic engine evaluates all messages before scope/refusal and provider invocation. An emergency trigger supersedes an instruction to ignore the rules. Emergency messages cannot be downgraded by the provider, conversation, or user assertion. Insufficient context yields limited protocol-defined questions or referral; unknown never equals negative. The scope checker rejects requests for diagnosis, prescriptions, dosage, medication changes and clearance. This is a finite synthetic language check, not complete natural-language understanding.
+
+Model proposals must be valid, strictly typed JSON; contain only real configured rule IDs; use the preselected `GENERAL_INFO` category; have no model-proposed follow-ups, refusals or escalations; and avoid a conservatively blocked set of medical certainty or treatment language. Invalid output is not shown: a local provider-failure message is used instead. The system does not include a user-configurable 'ignore safety' flag. Approved clinical escalations are not implemented because no approved protocol has been provided.
+
+Conservative filters cannot guarantee detection of every unsafe natural-language phrase, and demonstration phrase triggers cannot reliably identify actual medical urgency. Treat this architecture as a testable boundary, not clinical safety evidence.
